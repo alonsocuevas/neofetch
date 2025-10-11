@@ -1,0 +1,124 @@
+/* Paleta de colores Dark Theme (Dracula / Monokai) */
+        :root {
+            --bg-dark: #282a36; /* Fondo de la terminal */
+            --bg-header: #44475a; /* Fondo de la barra de título */
+            --color-command: #50fa7b; /* Verde claro para comandos (prompt) */
+            --color-output: #f8f8f2; /* Blanco para salida normal */
+            --color-keyword: #e07e23; /* Rosa para el nombre y destacados */
+            --color-icon: #ffb86c; /* Naranja para iconos y separadores */
+            --color-error: #ff5555; /* Rojo para errores/status */
+        }
+
+        body {
+            background-color: #1e1e1e; /* Fondo global oscuro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Pixelify Sans, fantasy; /* Fuente de codificación */
+        }
+
+        /* Contenedor principal de la ventana */
+        #terminal-window {
+            width: 700px;
+            height: 600px;
+            background-color: var(--bg-dark);
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7); /* Efecto 3D / Sombra flotante */
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Barra de Título (Header) */
+        .terminal-header {
+            background-color: var(--bg-header);
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+            height: 30px;
+        }
+
+        /* Botones (Rojo, Amarillo, Verde) */
+        .header-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .close { background-color: #ff5f56; }
+        .minimize { background-color: #ffbd2e; }
+        .maximize { background-color: #27c93f; }
+
+        /* Contenido de la Terminal (Output) */
+        .terminal-content {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto; /* Permite desplazamiento si hay mucho texto */
+            color: var(--color-output);
+            line-height: 1.5;
+            font-size: 18px;
+            white-space: pre-wrap; /* Mantiene saltos de línea y espacios */
+        }
+
+        /* Clases de Color y Estilo */
+        .line-command { color: var(--color-command); }
+        .line-output { color: var(--color-output); }
+        .line-separator { color: var(--color-icon); font-weight: bold; }
+        
+        /* Nombre en Pixel Art (destacado) */
+        .name-pixel {
+            font-family: 'Pixelify Sans', fantasy; 
+            font-size: 60px;
+            color: var(--color-keyword);
+            text-shadow: 2px 2px 0px var(--color-error); /* Sombra para efecto 3D pixelado */
+            line-height: 0.5; /* Reduce el espacio vertical */
+            margin: 20px 0 10px 0;
+            display: block; /* Asegura que ocupe su propia línea */
+        }
+
+        /* Cursor Parpadeante */
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.2em;
+            background-color: var(--color-output);
+            margin-left: 5px;
+            animation: blink 1s step-end infinite;
+        }
+
+        /* Animación de Parpadeo del Cursor */
+        @keyframes blink {
+            from, to { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Estilo para los iconos (usando Emojis o iconos Unicode) */
+        .icon {
+            color: var(--color-icon);
+            font-size: 20px;
+            margin-right: 5px;
+        }
+
+        /* ... (tu CSS existente) ... */
+
+/* Estilo para el avatar en 8-bit */
+.pixel-avatar {
+    float: left; /* Para que el texto fluya a su lado */
+    margin-right: 20px; /* Espacio entre el avatar y el texto */
+    width: 120px; /* Tamaño del avatar */
+    height: auto; /* Mantiene la proporción */
+    image-rendering: pixelated; /* ¡CRÍTICO! Para que la imagen se vea pixelada */
+    -webkit-font-smoothing: none; /* Asegura que el pixelado no se "suavice" */
+    font-smoothing: none;
+    shape-outside: url('data:image/png;base64,...'); /* Opcional: para que el texto rodee la forma del avatar */
+}
+
+/* Clearfix para evitar problemas de float con las líneas siguientes */
+.terminal-content div::after {
+    content: "";
+    display: table;
+    clear: both;
+}
