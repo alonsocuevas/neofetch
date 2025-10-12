@@ -125,10 +125,16 @@ body {
 
 /* Móviles */
 @media (max-width: 600px) {
+    body {
+        padding: 0;
+        display: block;
+    }
+
     #terminal-window {
-        width: 100%;
-        height: auto;
-        max-height: none;
+        width: 95vw;
+        height: 90vh;
+        margin: 5vh auto;
+        max-height: 1000px; /* Aumentar altura máxima */
     }
 
     .terminal-header {
@@ -137,21 +143,23 @@ body {
     }
 
     .terminal-content {
-        font-size: clamp(12px, 3vw, 16px);
-        padding: 10px;
+        font-size: clamp(10px, 3vw, 14px); /* Reducir tamaño de fuente */
+        padding: 15px;
     }
 
     .name-pixel {
-        font-size: clamp(24px, 7vw, 40px);
+        font-size: clamp(18px, 6vw, 32px); /* Reducir tamaño de fuente */
         text-align: center;
+        line-height: 1.1; /* Ajustar interlineado */
+        margin: 5px 0;
     }
 
     .icon {
-        font-size: clamp(12px, 4vw, 18px);
+        font-size: clamp(12px, 3.5vw, 16px); /* Reducir tamaño de fuente */
     }
 
     .pixel-avatar {
-        width: clamp(60px, 30vw, 100px);
+        width: clamp(50px, 25vw, 90px); /* Reducir tamaño */
     }
 }
 
