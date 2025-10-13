@@ -12,49 +12,49 @@ const fullTextLines = [
     { type: 'raw', html: `<span class="name-pixel">ALONSO CUEVAS</span>` },
     { type: 'raw', html: `<span class="name-pixel">PIZARRO</span>` },
 
-    { type: 'output', text: '  <span class="icon">💼</span> Desarrollador Web Full Stack' },
-    { type: 'output', text: '  <span class="icon">🎓</span> Ingeniero en Informática' },
-    { type: 'output', text: '  <span class="icon">📍</span> Ubicacion: Chile' },
+    { type: 'output', text: '> Desarrollador Web Full Stack' },
+    { type: 'output', text: '> Ingeniero en Informática' },
+    { type: 'output', text: '> Ubicacion: Chile' },
     { type: 'output', text: '' },
 
-    { type: 'line', text: '--------------- TECNOLOGÍAS ---------------' },
+    { type: 'separator', text: '------ TECNOLOGÍAS ------' },
 
    // { type: 'command', text: 'user@alonso-pc:~$ ls -l /skills/core' },
     
     // LENGUAJES Y FRAMEWORKS
-{ type: 'output', text: `    <span class="icon fab fa-js" style="color:#f1e05a;"></span> JavaScript / <span class="icon fab fa-python" style="color:#3572A5;"></span> Python` },
+{ type: 'output', text: `<span class="icon fab fa-js" style="color:#f1e05a;"></span> JavaScript / <span class="icon fab fa-python" style="color:#3572A5;"></span> Python` },
    
 // Next.js: Usamos la clase de Devicon para el logo oficial
-{ type: 'output', text: `    <span class="icon fab fa-react" style="color:#61DAFB;"></span> React / <span class="icon devicon-nextjs-original colored" style="color:#ffffff;"></span> Next.js` }, 
-{ type: 'output', text: `    <span class="icon fab fa-html5" style="color:#E34F26;"></span> HTML / <span class="icon fab fa-css3-alt" style="color:#1572B6;"></span> CSS` },
+{ type: 'output', text: `<span class="icon fab fa-react" style="color:#61DAFB;"></span> React / <span class="icon devicon-nextjs-original colored" style="color:#ffffff;"></span> Next.js` }, 
+{ type: 'output', text: `<span class="icon fab fa-html5" style="color:#E34F26;"></span> HTML / <span class="icon fab fa-css3-alt" style="color:#1572B6;"></span> CSS` },
 
 // PostgreSQL y MySQL: Usamos las clases oficiales de Devicon
-{ type: 'output', text: `    <span class="icon fab fa-node-js" style="color:#339933;"></span> Node.js / <span class="icon devicon-postgresql-plain colored" style="color:#4169E1;"></span> PostgreSQL / <span class="icon devicon-mysql-plain colored" style="color:#4479A1;"></span> MySQL` }, 
+{ type: 'output', text: `<span class="icon fab fa-node-js" style="color:#339933;"></span> Node.js / <span class="icon devicon-postgresql-plain colored" style="color:#4169E1;"></span> PostgreSQL / <span class="icon devicon-mysql-plain colored" style="color:#4479A1;"></span> MySQL` }, 
 // Prisma ORM: Devicon no tiene logo oficial, ¡pero Simple Icons sí! Usaremos el logo Unicode de diamante con el color oficial (es lo más cercano a lo "correcto")
-{ type: 'output', text: `    <span class="icon">💎</span> Prisma ORM` }, // El diamante Unicode o el logo de Prisma SVG es la única opción
+{ type: 'output', text: `<span class="icon">💎</span> Prisma ORM` }, // El diamante Unicode o el logo de Prisma SVG es la única opción
 { type: 'output', text: '' },
    
 // HERRAMIENTAS Y DEVOPS
 // VS CODE: Usamos la clase oficial de Devicon
-{ type: 'output', text: `    <span class="icon fab fa-docker" style="color:#2496ED;"></span> Docker / <span class="icon devicon-vscode-plain colored" style="color:#007ACC;"></span> VS Code` }, 
-{ type: 'output', text: `    <span class="icon fab fa-git-alt" style="color:#F05032;"></span> Git / <span class="icon fab fa-github" style="color:#ffffff;"></span> GitHub` },
-{ type: 'output', text: `    <span class="icon fab fa-aws" style="color:#FF9900;"></span> AWS / <span class="icon fas fa-terminal" style="color:#50fa7b;"></span> BASH` },
+{ type: 'output', text: `<span class="icon fab fa-docker" style="color:#2496ED;"></span> Docker / <span class="icon devicon-vscode-plain colored" style="color:#007ACC;"></span> VS Code` }, 
+{ type: 'output', text: `<span class="icon fab fa-git-alt" style="color:#F05032;"></span> Git / <span class="icon fab fa-github" style="color:#ffffff;"></span> GitHub` },
+{ type: 'output', text: `<span class="icon fab fa-aws" style="color:#FF9900;"></span> AWS / <span class="icon fas fa-terminal" style="color:#50fa7b;"></span> BASH` },
 
     { type: 'output', text: '' },
-     { type: 'line', text: '---------------- CONTACTO -----------------' },
-    { type: 'output', text: `  <span class="icon fab fa-whatsapp" style="color:#25D366;"></span> +56 932207318` },
+     { type: 'separator', text: '------ CONTACTO -------' },
+    { type: 'output', text: `<span class="icon fab fa-whatsapp" style="color:#25D366;"></span> +56 932207318` },
     
-    { type: 'output', text: `  <span class="icon fas fa-globe" style="color:#ffb86c;"></span> https://alonsocuevas.github.io/dev/` },
+    { type: 'output', text: `<span class="icon fas fa-globe" style="color:#ffb86c;"></span> https://alonsocuevas.github.io/dev/` },
 
-    { type: 'output', text: `  <span class="icon fab fa-github" style="color:#ffffff;"></span> https://github.com/alonsocuevas` },
+    { type: 'output', text: `<span class="icon fab fa-github" style="color:#ffffff;"></span> https://github.com/alonsocuevas` },
     
     { type: 'output', text: '' },
-    { type: 'output', text: `------- May The Force Be With You -------` },
+    { type: 'separator', text: `------- May The Force Be With You -------` },
     { type: 'command', text: 'alonso@alonso:~$ ' },
 ];
 
 // Función principal para la animación de escritura
-function typeLine(lineData) {
+function typeLine(lineData, isLastLine = false) {
     return new Promise(resolve => {
         const lineElement = document.createElement('div');
         let content = lineData.text || '';
@@ -104,8 +104,11 @@ function typeLine(lineData) {
                 
                 requestAnimationFrame(() => setTimeout(writeChar, speed));
             } else {
-                // Terminado, quitamos el cursor y resolvemos la promesa
-                lineElement.removeChild(cursor);
+                // Terminado, resolvemos la promesa
+                // Si no es la última línea, quitamos el cursor
+                if (!isLastLine) {
+                    lineElement.removeChild(cursor);
+                }
                 resolve();
             }
         }
@@ -116,15 +119,20 @@ function typeLine(lineData) {
 
 // Función para procesar todas las líneas
 async function runCompilation() {
-    for (const lineData of fullTextLines) {
+    for (let i = 0; i < fullTextLines.length; i++) {
+        const lineData = fullTextLines[i];
+        const isLastLine = i === fullTextLines.length - 1;
+
         // Hacemos que se escriba la línea y esperamos a que termine
-        await typeLine(lineData); 
+        await typeLine(lineData, isLastLine); 
         
         // Hacemos que la pantalla se desplace automáticamente hacia abajo
         terminalContent.scrollTop = terminalContent.scrollHeight;
 
-        // Esperamos el retraso entre líneas
-        await new Promise(resolve => setTimeout(resolve, lineDelay));
+        // Esperamos el retraso entre líneas, excepto para la última
+        if (!isLastLine) {
+            await new Promise(resolve => setTimeout(resolve, lineDelay));
+        }
     }
 }
 

@@ -68,7 +68,7 @@ body {
 /* === LÍNEAS === */
 .line-command { color: var(--color-command); }
 .line-output { color: var(--color-output); }
-.line-separator { color: var(--color-icon); font-weight: bold; }
+.line-separator { color: var(--color-keyword); font-weight: bold; }
 
 /* === NOMBRE PIXELADO === */
 .name-pixel {
@@ -76,7 +76,7 @@ body {
     font-size: clamp(28px, 5vw, 60px);
     color: var(--color-keyword);
     text-shadow: 2px 2px 0px var(--color-error);
-    line-height: 1;
+    line-height: 0.5;
     margin: 10px 0;
     display: block;
 }
@@ -124,7 +124,7 @@ body {
 /* === MEDIA QUERIES === */
 
 /* Móviles */
-@media (max-width: 600px) {
+@media (max-width: 200px) {
     body {
         padding: 0;
         display: block;
