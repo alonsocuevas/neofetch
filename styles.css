@@ -72,13 +72,14 @@ body {
 
 /* === NOMBRE PIXELADO === */
 .name-pixel {
-    font-family: 'Pixelify Sans', fantasy;
+    font-family: 'Press Start 2P', fantasy;
     font-size: clamp(28px, 5vw, 60px);
     color: var(--color-keyword);
     text-shadow: 2px 2px 0px var(--color-error);
-    line-height: 0.5;
+    line-height: 0.8;
     margin: 10px 0;
     display: block;
+    word-spacing: -25px;
 }
 
 /* === CURSOR PARPADEANTE === */
@@ -175,6 +176,6 @@ body {
     }
 
     .name-pixel {
-        font-size: 50px;
+        font-size: 35px;
     }
 }

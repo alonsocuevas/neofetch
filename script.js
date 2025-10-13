@@ -49,7 +49,7 @@ const fullTextLines = [
     { type: 'output', text: `<span class="icon fab fa-github" style="color:#ffffff;"></span> https://github.com/alonsocuevas` },
     
     { type: 'output', text: '' },
-    { type: 'separator', text: `------- May The Force Be With You -------` },
+    { type: 'separator', text: `---- May The Force Be With You ----` },
     { type: 'command', text: 'alonso@alonso:~$ ' },
 ];
 
