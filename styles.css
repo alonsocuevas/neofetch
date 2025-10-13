@@ -79,7 +79,7 @@ body {
     line-height: 0.8;
     margin: 10px 0;
     display: block;
-    word-spacing: -25px;
+    word-spacing: -20px;
 }
 
 /* === CURSOR PARPADEANTE === */
@@ -125,7 +125,7 @@ body {
 /* === MEDIA QUERIES === */
 
 /* Móviles */
-@media (max-width: 200px) {
+@media (max-width: 400px) {
     body {
         padding: 0;
         display: block;
@@ -151,8 +151,9 @@ body {
     .name-pixel {
         font-size: clamp(18px, 6vw, 32px); /* Reducir tamaño de fuente */
         text-align: center;
-        line-height: 1.1; /* Ajustar interlineado */
+        line-height: 1.4; /* Aumentar interlineado para mejor legibilidad */
         margin: 5px 0;
+        word-spacing: normal; /* Restablecer espaciado en móviles */
     }
 
     .icon {

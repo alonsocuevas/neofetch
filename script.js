@@ -50,7 +50,7 @@ const fullTextLines = [
     
     { type: 'output', text: '' },
     { type: 'separator', text: `---- May The Force Be With You ----` },
-    { type: 'command', text: 'alonso@alonso:~$ ' },
+    { type: 'command', text: 'alonso@alonso:~$ ' },       
 ];
 
 // Función principal para la animación de escritura
