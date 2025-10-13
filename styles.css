@@ -150,7 +150,7 @@ body {
 
     .name-pixel {
         font-size: clamp(18px, 6vw, 32px); /* Reducir tamaño de fuente */
-        text-align: center;
+        text-align: left;
         line-height: 1.4; /* Aumentar interlineado para mejor legibilidad */
         margin: 5px 0;
         word-spacing: normal; /* Restablecer espaciado en móviles */
